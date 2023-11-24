@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/stylesheet_vender.css') }}">
+    <style>
+         html {
+    background-image:url("{{ url_for('static',filename='images/webback.png') }}");
+    background-image: no-repeat center center fixed;
+    -webkit-background-size:cover ;
+    -moz-background-size:cover ;
+    -o-background-size:cover ;
+    background-size: cover;
+    font-size: 10px;
+}
+body{
+    font-size: 10px;
+}
+    </style>
+ 
+</head>
+<body>
+   
+    <div class="create-acc">
+        <p>Add Product</p>
+        <form action='addproduct' method="post">
+        
+            <p style="color: lightgreen;">{{prdadded}}</p>
+
+        <input type="text" class="input" name="Productname" placeholder="Enter Product Name" required><br><br>
+        <input type="text" class="input" name="productprice" placeholder="Enter Product Price" required><br><br>
+        <input type="text" class="input" name="quantity" placeholder="Enter Product Quantity" required><br><br>
+        <label for="category">Select Product Type: </label><br>
+        <input type="radio" name="category" value="cookware"><label style="font-size: 15px;"required>Cookware</label>
+        <input type="radio" name="category" value="furniture"><label style="font-size: 15px;"required>Furniture</label><br>
+        <input type="radio" name="category" value="decoration"><label style="font-size: 15px;"required>Decoration</label>
+        <input type="radio" name="category" value="phone"><label style="font-size: 15px;"required>Phone</label><br>
+        <input type="radio" name="category" value="laptop"><label style="font-size: 15px;"required>Laptop</label>
+        <input type="radio" name="category" value="watches"><label style="font-size: 15px;"required>Watches</label><br>
+        <input type="radio" name="category" value="mens"><label style="font-size: 15px;"required>Mens</label>
+        <input type="radio" name="category" value="womens"><label style="font-size: 15px;"required>Womens</label><br>
+        <input type="radio" name="category" value="accessories"><label style="font-size: 15px;"required>Accessories</label>
+        <input type="radio" name="category" value="makeup"><label style="font-size: 15px;"required>Makeup</label><br>
+        <input type="radio" name="category" value="skincare"><label style="font-size: 15px;"required>Skincare</label>
+        <input type="radio" name="category" value="haircare"><label style="font-size: 15px;" required>Haircare</label><br>
+        <input type="text" class="input" name="imagepath" placeholder="Enter imagepath" required><br><br>
+        <input type="submit" class="input-submit" id="Add Product" value="Add Product"><br>
+        <a href='shop'><p style="font-size: 15px;">Back to Home</p></a>
+    </form>
+       
+    </div>
+</body>
+</html>

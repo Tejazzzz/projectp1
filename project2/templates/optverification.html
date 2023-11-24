@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phone No vrification</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/stylesheet_vender.css') }}">
+    <style>
+         html {
+    background-image:url("{{ url_for('static',filename='images/webback.png') }}");
+    background-image: no-repeat center center fixed;
+    -webkit-background-size:cover ;
+    -moz-background-size:cover ;
+    -o-background-size:cover ;
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
+ 
+    
+    <div class="create-acc">
+        <!-- <p>Create Account</p> -->
+        <form action='/getlogin' method="POST">
+            <p style="font-size: 20px;"> your otp is send to this {{email}} </p>
+        <input type="text" class="input" name="input-otp" placeholder="Enter OTP"><br>
+        <p style="font-size: 20px;color: red;">{{error}}</p><br>
+        <input type="submit" class="input-submit" value="Submit And Proceed">
+    </form>
+
+    </div>
+</body>
+</html>

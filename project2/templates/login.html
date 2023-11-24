@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyZon | User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/stylesheet_vender.css') }}">
+    <style>
+         html {
+    background-image:url("{{ url_for('static',filename='images/webback.png') }}");
+    background-image: no-repeat center center fixed;
+    -webkit-background-size:cover ;
+    -moz-background-size:cover ;
+    -o-background-size:cover ;
+    background-size: cover;
+}
+    </style>
+         </head>
+     <body>
+    <div class="create-acc">
+    <form action='/getshop' , method="POST">
+
+            <b> Login</b><br><br>
+
+            <input type="text" class="input" placeholder="Enter Your Email" name="loginemail" required></p>
+            <input type="password" class="input" placeholder="Enter Your Password" name="loginpassword" required></p>
+            <input type="submit" class="input-submit" name="Login" value="Login"></h2>
+            <p style="font-size: 20px;">Don't Have an Account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+
+            <p style="color: red;font-size: 15px;">{{error}}</p>
+
+        </form>
+    </div>
+</body>
+
+</html>

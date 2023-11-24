@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MyZon Cart</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/myzon.png') }}" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}" />
+</head>
+<body>
+    <div class="cart">
+        <h1><b>MyZon Cart</b></h1>
+        <a href="{{ url_for('shop') }}" class="continue-shopping-btn">Continue Shopping</a><br>
+        <div class="product-list">
+            {% for item in cart_items %}
+            <div class="product-item">
+                <div class="product-info">
+                    <p>{{ item[0] }}</p>
+                    <p class="product-price">₹{{ item[1] }}</p>
+                    <p class="product-quantity">Quantity: {{ item[2] }}</p>
+                </div>
+                <div class="remove-btn">
+                    <form action="/removeitem" method="post">
+                        <input type="hidden" name="pname" value="{{ item[0] }}">
+                        <button type="submit" class="remove-from-cart-btn">Remove</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="total-price">
+            <h2>Total:</h2>
+            <h2 class="total-amount">₹{{ total_price }}</h2>
+        </div>
+        <form action="checkout" method="post">
+            <button type="submit" class="continue-shopping-btn">Checkout</button>
+        </form>
+    </div>
+</body>
+</html>

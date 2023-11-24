@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+form {
+    display: inline;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-table {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px 2px #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    margin: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href=''><img src="{{ url_for('static', filename='images/myzon.png') }}" height="150px" width="150px"></a>
+        <div class="header-nav">
+            
+            <div class="search-bar">
+
+                <form action='search_orders' method="post">
+                    <input type="text" name="search-bar" placeholder="Search by Order ID">
+                    <button type="submit">Search</button>
+                </form>
+                
+                    <a href="neviaddprd"><button type="submit">Add Product</button></a>
+                    <a href="dashboard"><button type="submit">All Orders</button></a>
+
+            </div>
+        
+            <div class="order-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Email ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order[0] }}</td>
+                            <td>{{ order[1] }}</td>
+                            <td>{{ order[2] }}</td>
+                            <td>₹{{ order[3] }}</td>
+                            <td>{{ order[4] }}</td>
+                            <td>₹{{ order[5] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add your content for the admin dashboard below -->
+
+</body>
+</html>

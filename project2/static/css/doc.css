@@ -1,0 +1,361 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+    background-color: lightgray; 
+  }
+.header {
+    height: 220px; /* Updated height to make it touch the top */
+    width: 100%;
+    background-color: white;
+    font-family: sans-serif;
+    padding: 30px;
+    position: fixed;
+    top: 0; /* Ensure it's at the top */
+  }
+
+          img {
+            max-width: 100%;
+          }
+          .slider-container {
+    margin-top: 300px; /* Create space for the header */
+    margin-left: 10%;
+    height: 60%;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+          .menu {
+            position: absolute;
+            left: 0;
+            z-index: 900;
+            width: 100%;
+            bottom: 0;
+          }
+          .menu label {
+            cursor: pointer;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50px;
+            margin: 0 0.2em 1em;
+          }
+          .menu label:hover,
+          .menu label:focus {
+            background: #1c87c9;
+          }
+          .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            z-index: 10;
+            padding: 8em 1em 0;
+            background-size: cover;
+            background-position: 50% 50%;
+            transition: left 0s 0.75s;
+          }
+          
+          .cart-img{
+               margin-left: 90%;
+               margin-top: -150px;
+            }
+          .cart-img:hover{
+                height: 35px;
+                transition: 250ms;
+            }
+.Comp-name{
+    /* font-size: 50px; */
+    padding: 30px;
+}
+.header-nav{
+    margin-top: -40px;
+    word-spacing: 20px;
+    text-align: center; 
+}
+.electronics-btn{
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    background-color: white;
+    text-decoration: none;
+    border: none;
+}
+
+.header-nav a{
+    
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.header-nav a:hover{
+    color: white;
+    background-color: cadetblue;
+    transition: 500ms;
+    text-decoration:inherit;
+    padding: 20px;
+    border-radius: 10px;
+}
+.main-content{
+    margin-top: 5%;
+}
+.main-content.advertisement{
+    width: 100%;
+    height: 100px;
+}
+.main-content.about-me{
+    margin-left: 50%;
+}
+.header-nav{
+    display:flex;
+    margin-left: 25%;
+
+   
+}
+.home{
+    margin-top: -5.5%;
+    padding: 10px 50px;
+    
+    border-radius: 5px;
+}
+.electronics{
+    margin-top: -5.5%;
+    padding: 10px 50px;
+}
+.fashion{
+    margin-top: -5.5%;
+    padding: 10px 50px;
+}
+.Gym-Sports{
+    margin-top: -5.5%;
+    padding: 10px 50px;
+}
+.beauty{
+    margin-top: -5.5%;
+    padding: 10px 50px;
+}
+
+.home-btn-ddn{
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    
+    
+}
+.home:hover .home-btn-ddn{
+    display: inline-block;
+}
+.ele-btn-ddn{
+    display: none;
+    position: absolute;
+    text-decoration: none;
+}
+.electronics:hover .ele-btn-ddn{
+   display: inline-block;
+}
+.fashion-btn-ddn{
+    display: none;
+    position: absolute;
+    text-decoration: none;
+}
+.fashion:hover .fashion-btn-ddn{
+   display: inline-block;
+}
+
+.bty-btn-ddn{
+display:none;
+position: absolute;
+text-decoration: none;
+    }
+.beauty:hover .bty-btn-ddn{
+display: inline-block;
+}
+.header-nav .home .electronics .clothing .gym-sports .beauty{
+display: inline;
+}
+.fashion-btn{
+background-color: white; 
+border: none;
+border-radius: 10px;
+}
+.home-btn{
+background-color: white; 
+border: none;
+border-radius: 10px;
+}
+.ele-btn{
+background-color: white; 
+border: none;
+border-radius: 10px;
+}
+.bty-btn{
+background-color: white; 
+border: none;
+border-radius: 10px;
+}
+.user{
+    background-color: white; 
+    border: none;
+    border-radius: 10px;
+}
+.hon-btn-ddn{
+    padding: 200px 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+.search-btn{
+
+    margin-top: 1.3%;
+    position: absolute; 
+    background-color:cadetblue"
+}
+.search.search-btn{
+    display: inline; 
+}
+.product{
+    margin-top: 300px;
+    margin-left: 10%;
+    
+
+
+
+}
+.product-list{
+    display:inline-block;
+
+
+}
+.pd-btn{
+    background-color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+.pd{
+    display: inline-block;
+    padding: 10px;
+}
+
+.pda-btn{
+    background-color: white;
+    padding: 15px;
+    
+}
+.pda-btn-btn{
+    
+    display: inline-flex;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: black;
+
+}
+.pda-btn-btn:hover{
+    background-color: cadetblue;
+    transition: 500ms;
+    padding: 12px;
+}
+.section
+{
+    
+        height: 300px;
+        width: 40%;
+        margin-left: 30%;
+        background-image: url("discount1.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        animation-name: changImage;
+        animation-duration: 12s;
+        animation-timing-function: linear;
+     animation-iteration-count: infinite;
+
+    }
+    .add_to_cart{
+        position: fixed;
+    }
+    .cart-img{
+         margin-left: 90%;
+       
+      }
+    .cart-img:hover{
+          height: 35px;
+          transition: 250ms;
+      }
+      .seinbtn{
+        display:flow-root;
+      }
+      .logout{
+        margin-top: -5%;
+        margin-left: 35%;
+      }
+     .logout-btn{
+      padding:10px 20px ;
+      border: none;
+      border-radius: 10px;
+      background-color: cadetblue;
+     }
+     .logout-btn:hover{
+      padding:12px 22px ;
+      border: none;
+      border-radius: 10px;
+      background-color: cadetblue;
+     }
+     /* Footer Styles */
+.site-footer {
+    background-color: #727272;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.site-footer h3 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.site-footer p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #ff9900;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer ul li {
+    margin: 5px 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .site-footer {
+        text-align: center;
+    }
+    .site-footer h3, .site-footer p, .site-footer ul {
+        text-align: center;
+    }
+}
+
+
+ 

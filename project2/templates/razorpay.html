@@ -1,0 +1,60 @@
+<!-- razorpay.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+</head>
+<body>
+    <h1>Total Amount: {{ total_price }}</h1>
+    <form action="/razorpaya" method="post">
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="{{ RAZORPAY_API_KEY }}"
+            data-amount="{{ total_price }}"
+            data-currency="INR"
+            data-order_id="{{ order_id }}" 
+            data-buttontext="Pay with Razorpay"
+            data-name="Your Company Name"
+            data-description="Payment for your order"
+            data-image="your_logo_url"
+            data-prefill.name="{{ user_name }}"
+            data-prefill.email="{{ entered_mailid }}"
+            data-theme.color="#F37254"
+        ></script>
+        <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+        <input type="hidden" name="razorpay_signature" id="razorpay_signature">
+        <button type="submit">Proceed to Pay</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (event) {
+                var options = {
+                    key: '{{ RAZORPAY_API_KEY }}', // Add your Razorpay API key here
+                    amount: '{{ total_price }}',
+                    currency: 'INR',
+                    name: 'Your Company Name',
+                    description: 'Payment for your order',
+                    order_id: '{{ order_id }}',
+                    prefill: {
+                        name: '{{ user_name }}',
+                        email: '{{ entered_mailid }}',
+                    },
+                    handler: function (response) {
+                        $('#razorpay_payment_id').val(response.razorpay_payment_id);
+                        $('#razorpay_signature').val(response.razorpay_signature);
+                        $('form').get(0).submit();
+                    },
+                };
+
+                var rzp = new Razorpay(options);
+                rzp.open();
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>

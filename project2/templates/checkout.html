@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .checkout-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        .total-price {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ user_name }}</h1>
+    <div class="checkout-container">
+        <h2>Items in Your Cart:</h2>
+        <ul>
+            {% for item in cart_items %}
+                <li>{{ item[0] }} - ₹{{ item[1] }} (Quantity: {{ item[2] }})</li>
+            {% endfor %}
+        </ul>
+        <div class="total-price">
+            Total Price: ₹{{ total_price }}
+        </div>
+
+        <form action="/cancel_checkout" method="post">
+            <button type="submit">Cancel Checkout</button>
+        </form>
+        <br>
+        <form action="/proceed_checkout" method="post">
+            <button type="submit">Proceed with Checkout</button>
+        </form>
+    </div>
+</body>
+</html>

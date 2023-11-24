@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+
+    <title>MyZon Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/stylesheet_vender.css') }}">
+   <style>
+   html {
+    background-image:url("{{ url_for('static',filename='images/webback.png') }}");
+    background-image: no-repeat center center fixed;
+    -webkit-background-size:cover ;
+    -moz-background-size:cover ;
+    -o-background-size:cover ;
+    background-size: cover;
+}
+   </style>
+</head>
+<body>
+
+    </div>
+    <div class="create-acc">
+        <p>Create Account</p>
+        <form action='/getvalue' method="POST">
+        <input type="text" class="input" name="firstname" placeholder="Enter First Name" required>
+        <input type="text" class="input" name="lastname" placeholder="Enter Last Name" required><br><br>
+        <input type="email" class="input" name="email" placeholder="Enter Email" required><br>
+        <p style="font-size: 20px;">Gender</p>
+        <p style="font-size: 20px;"><input type="radio" name="gender" required value="Male" placeholder="Male"> Male
+        <input type="radio" name="gender" required value="Female" placeholder="Female">Female
+        <input type="radio" name="gender" required value="Others" placeholder="Others">Others</p><br>
+        <input type="password" class="input" name="new_password" placeholder="Enter New Password" required>
+        <input type="password" class="input" name="confirm_password" placeholder="Confirm Password" required><br>
+        <p style="font-size: 20px;color: red;">{{pnm}}</p><br>
+         
+        <input type="submit" class="input-submit" value="Verify">
+    </form>
+
+    </div>
+</body>
+</html>

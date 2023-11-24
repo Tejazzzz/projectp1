@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop</title>
+    <link rel = "icon" href =  
+"{{ url_for('static',filename='images/myzon.png') }}" 
+        type = "image/x-icon" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/doc.css') }}">
+</head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('shop') }}"><img src="{{ url_for('static',filename='images/myzon.png') }}" height="100px" width="100"></a>
+    </div>
+    <div class="header-nav">
+        <div class="home">
+            <button class="home-btn"><img src="{{ url_for('static',filename='images/home.png') }}" height="70px" width="70px" ><br><a href="#">Home</a></button>
+            <div class="home-btn-ddn"><br><br>
+                <a href="{{ url_for('cookware') }}">Cookware</a><br><br>
+                <a href="{{ url_for('furniture') }}">Furniture</a><br><br>
+                <a href="{{ url_for('decoration') }}">Decoration</a><br><br>
+            </div>
+            </div>
+        <div class="electronics">
+            <button class="ele-btn"><img src="{{ url_for('static',filename='images/electronicslogo.png') }}" height="70px" width="70px"><br><a href="#">Electronics</a></button>
+            <div class="ele-btn-ddn"><br><br>
+                <a href="{{ url_for('phone') }}">Phone</a><br><br>
+                <a href="{{ url_for('laptop') }}">Laptop</a><br><br>
+                <a href="{{ url_for('watches') }}">Watches</a><br><br>
+            </div>
+            </div>
+            <div class="fashion">
+                <button class="fashion-btn"><img src="{{ url_for('static',filename='images/fashionlogo.png') }}" height="70px" width="70px"><br><a href="#">Fashion</a></button>
+                <div class="fashion-btn-ddn"><br><br>
+                    <a href="{{ url_for('mens') }}">Men's</a><br><br>
+                    <a href="{{ url_for('womens') }}">Women's</a><br><br>
+                    <a href="{{ url_for('accessories') }}">Accessories</a><br><br>
+                </div>
+            </div>
+            <div class="beauty">
+                <button class="bty-btn"><img src="{{ url_for('static',filename='images/beautylogo.png') }}" height="70px" width="70px"><br><a href="#">Beauty</a></button>
+                <div class="bty-btn-ddn"><br><br>
+                    <a href="{{ url_for('makeup') }}">Makeup</a><br><br>
+                    <a href="{{ url_for('skincare') }}">Skincare</a><br><br>
+                    <a href="{{ url_for('haicare') }}">Haircare</a><br><br>
+                        </div>
+                    </div>
+                </div>
+                <a href=""><img src="{{ url_for('static',filename='images/add_to_cart.png') }}" class="cart-img" height="30px" alt=""></a>
+            </div>
+
+            <div class="search">
+               
+                <input type="text" name="serach-bar" id="Search-bar" placeholder="    Search..." style="height: 30px; width: 40%; margin-left:30%; margin-top: 20px;" >         
+                <button class="search-btn"><img src="{{ url_for('static',filename='images/search.png') }}" height="26px" width="30px"></button>
+                </div>
+                </div>
+                 
+                <div class="product">
+                    <div class="product-list">
+                        <div class="pd">
+                            <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+                            <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+                            <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+                        </div>
+                        </div>
+
+            <div class="pd">
+                <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+                <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+                <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+            </div>
+     </div>
+     <div class="pd">
+        <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+        <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+        <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+    </div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <a href="lp1addtocart"><button class="pda-btn-btn" id="buy-now">Buy Now</button></a></div>
+</div>
+</div>
+<div class="pd">
+    <div class="pd-btn"><img src="{{ url_for('static',filename='images/lap2.png') }}" height="350px" width="250px"><br>
+    <p>Dell Notebook 1</p><div class="pda-btn"><button class="pda-btn-btn" id="add-to-cart">Add to Cart</button>
+    <button class="pda-btn-btn" id="buy-now">Buy Now</button></div>
+</div>
+</div>   
+            
+
+</body>
+</html>

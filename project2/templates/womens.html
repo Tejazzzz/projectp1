@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MyZon | Women's</title>
+    <link rel = "icon" href =  
+"{{ url_for('static',filename='images/myzon.png') }}" 
+        type = "image/x-icon" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src=
+        "https://code.jquery.com/jquery-3.6.0.min.js ">
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/doc.css') }}" />
+    <link rel="script" href="{{ url_for('static',filename='script/script.js') }}"/>
+</head>
+<body>
+  <div class="header">
+    <a href="{{ url_for('shop') }}"><img src="{{ url_for('static',filename='images/myzon.png') }}" height="150px" width="150px"></a>
+
+  <div class="header-nav">
+    <div class="home">
+        <button class="home-btn"><img src="{{ url_for('static',filename='images/home.png') }}" height="70px" width="70px" ><br><a href="#">Home</a></button>
+        <div class="home-btn-ddn"><br><br>
+            <a href="{{ url_for('cookware') }}">Cookware</a><br><br>
+            <a href="{{ url_for('furniture') }}">Furniture</a><br><br>
+            <a href="{{ url_for('decoration') }}">Decoration</a><br><br>
+        </div>
+        </div>
+    <div class="electronics">
+        <button class="ele-btn"><img src="{{ url_for('static',filename='images/electronicslogo.png') }}" height="70px" width="70px"><br><a href="#">Electronics</a></button>
+        <div class="ele-btn-ddn"><br><br>
+            <a href="{{ url_for('phone') }}">Phone</a><br><br>
+            <a href="{{ url_for('laptop') }}">Laptop</a><br><br>
+            <a href="{{ url_for('watches') }}">Watches</a><br><br>
+        </div>
+        </div>
+        <div class="fashion">
+            <button class="fashion-btn"><img src="{{ url_for('static',filename='images/fashionlogo.png') }}" height="70px" width="70px"><br><a href="#">Fashion</a></button>
+            <div class="fashion-btn-ddn"><br><br>
+                <a href="{{ url_for('mens') }}">Men's</a><br><br>
+                <a href="{{ url_for('womens') }}">Women's</a><br><br>
+                <a href="{{ url_for('accessories') }}">Accessories</a><br><br>
+            </div>
+        </div>
+        <div class="beauty">
+            <button class="bty-btn"><img src="{{ url_for('static',filename='images/beautylogo.png') }}" height="70px" width="70px"><br><a href="#">Beauty</a></button>
+            <div class="bty-btn-ddn"><br><br>
+                <a href="{{ url_for('makeup') }}">Makeup</a><br><br>
+                <a href="{{ url_for('skincare') }}">Skincare</a><br><br>
+                <a href="{{ url_for('haicare') }}">Haircare</a><br><br>
+                    </div>
+              </div>
+              <div class="logout">
+              <p style="font-size: 20px;">{{ firstname }}</p>
+
+<!-- Add a Logout button in your header -->
+<div class="user-dropdown">
+    <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+</div>
+</div>  
+
+            </div>
+      <!-- Update the user's first name display in your header -->
+
+            <a href="cart"><img src="{{ url_for('static',filename='images/add_to_cart.png') }}" class="cart-img" height="30px" alt=""></a>
+            <div class="search">
+           <div class="seinbtn">
+            <form action="search" method="post">
+              <input type="text" name="serach-bar" id="Search-bar" placeholder="    Search..." style="height: 30px; width: 40%; margin-left:30%; margin-top: 20px;" >         
+              <button class="search-btn"><img src="{{ url_for('static',filename='images/search.png') }}" height="26px" width="30px" style="background-color: lightblue; border: none;"></button>
+            </form>
+            </div>
+              </div>
+              </div>
+        </div>
+      </div>  
+                
+                  <div class="maincontent">
+
+                  <div class="product">
+                    <a href="neviaddprd" class="pda-btn-btn">SELL</a><br>
+
+                    <div class="product-list">
+                        {% for product in products %}
+                        <div class="pd">
+                          <h1>{{error}}</h1>
+                            <div class="pd-btn">
+                              <img src="{{ url_for('static', filename='images/' + product[3]) }}" height="350px" width="250px">
+                                <br>
+                                <p>{{ product[0] }}</p>
+                                <p style="font-size: 20px;">₹{{ product[1] }}</p>
+                                <p style="color: red;"><b>Quantity : {{ product[2] }}</b></p>
+                                <div class="pda-btn">
+                                  <form action="add_to_cart" method="post">
+                                    <input type="hidden" name="pname" value="{{ product[0] }}">
+                                    <input type="hidden" name="pprice" value="{{ product[1] }}">
+                                    <button class="pda-btn-btn" name="add-to-cart">Add to Cart</button>
+                                </form>
+                                <br>
+                                <form action="buy_now" method="post">
+                                  <input type="hidden" name="pname" value="{{ product[0] }}">
+                                  <input type="hidden" name="pprice" value="{{ product[1] }}">
+                                  <button class="pda-btn-btn" name="add-to-cart">Buy Now</button>
+                              </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+              </div>
+              <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>About Us</h3>
+                            <p>
+                              An MyZon web-applicatio allows users to browse, select, and purchase products or services online.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Contact Info</h3>
+                            <p>Email: info@example.com</p>
+                            <p>Phone: +1 (123) 456-7890</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Follow Us</h3>
+                            <ul class="list-inline">
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> 
+
+</body>
+</html>
